@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
 
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 
 import { MdNavigateNext } from 'react-icons/md';
 
