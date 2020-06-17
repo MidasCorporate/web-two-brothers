@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
 
-//import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 import { MdNavigateNext } from 'react-icons/md';
 
@@ -63,29 +63,32 @@ function Dashboard() {
   }, []);
 
   useEffect(() => {
-    if (bannerAutomatic) {
-      if (bannerCarrocel.length === 1) {
-        setTest(bannerCarrocel[0]);
-        return;
-      }
-      setTimeout(() => {
-        if (bannerCarrocel[number] !== undefined) {
-          setNumber(number + 1);
-
-          setTest(bannerCarrocel[number]);
-
-          setTag(true);
+    async function loadBanerLoop() {
+      if (bannerAutomatic) {
+        if (bannerCarrocel.length === 1) {
+          setTest(bannerCarrocel[0]);
+          return;
         }
-      }, 10000);
-      if (bannerCarrocel[number] === undefined) {
-        setNumber(0);
-      }
+        setTimeout(() => {
+          if (bannerCarrocel[number] !== undefined) {
+            setNumber(number + 1);
 
-      setTimeout(() => {
-        setTag(false);
-      }, 10000);
+            setTest(bannerCarrocel[number]);
+
+            setTag(!tag);
+          }
+        }, 10000);
+        if (bannerCarrocel[number] === undefined) {
+          setNumber(0);
+        }
+
+        setTimeout(() => {
+          setTag(!tag);
+        }, 10000);
+      }
     }
-  }, [number]);
+    loadBanerLoop();
+  }, [number, tag, bannerAutomatic, bannerCarrocel]);
 
   function handleClickAdvanceBanner() {
     setBannerAutomatic(false);
