@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 
 import { MdInsertComment, MdCancel } from 'react-icons/md';
 
@@ -15,7 +15,13 @@ import {
 
 function Post() {
   const [tagWindow, setTagWindow] = useState(false);
+  const [open, setOpen] = useState(false);
   const [contacts, setContacts] = useState([]);
+
+  const hasUnread = useMemo(
+    () => !!contacts.find((contact) => contact.read === false),
+    [contacts]
+  );
 
   useEffect(() => {
     async function loadContact() {
@@ -37,6 +43,11 @@ function Post() {
         contact._id === _id ? { ...contact, read: true } : contact
       )
     );
+    setOpen(!open);
+  }
+
+  function handleCloseMessage() {
+    setOpen(!open);
   }
 
   return (
@@ -45,21 +56,19 @@ function Post() {
         <span>
           <div />
         </span>
-        <CardHeader>
+        <CardHeader hasUnread={hasUnread}>
           <MdInsertComment color="#FFF" size={35} />
         </CardHeader>
         <CardBody>
           <strong>Mensagens</strong>
-          <p>
-            É neste campo que seus clientes podem conhecer um pouco mais sobre
-            você
-          </p>
+          <p>Aqui estão todas as mensagens de seus clientes</p>
         </CardBody>
       </CardButton>
       <WindowMessage tag={tagWindow}>
         <Close>
           <MdCancel color="red" size={20} onClick={() => handleWindow([])} />
         </Close>
+        <h3>Mensagens</h3>
         <fieldset>
           <table cellSpacing={0}>
             <tbody>
@@ -67,6 +76,7 @@ function Post() {
                 <ButtonContact
                   key={contact._id}
                   unread={contact.read}
+                  open={open}
                   type="button"
                   onClick={() => handleMarkAsRead(contact._id)}
                 >
@@ -76,16 +86,21 @@ function Post() {
                     <td>{contact.cel}</td>
                     <td>{contact.tel}</td>
                     <td>{contact.message}</td>
-                    <td>
-                      <div>
-                        <p>{contact.name}</p>
-                        <p>{contact.email}</p>
-                        <p>{contact.cel}</p>
-                        <p>{contact.tel}</p>
-                        <p>{contact.message}</p>
-                      </div>
-                    </td>
                   </tr>
+                  <div className="openMessage">
+                    <Close open={open}>
+                      <MdCancel
+                        color="red"
+                        size={20}
+                        onClick={() => handleCloseMessage()}
+                      />
+                    </Close>
+                    <p>{contact.name}</p>
+                    <p>{contact.email}</p>
+                    <p>{contact.cel}</p>
+                    <p>{contact.tel}</p>
+                    <span>{contact.message}</span>
+                  </div>
                 </ButtonContact>
               ))}
             </tbody>

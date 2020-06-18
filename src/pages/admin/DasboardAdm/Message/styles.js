@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const CardButton = styled.button`
   display: flex;
@@ -41,6 +41,22 @@ export const CardHeader = styled.header`
   background: red;
   padding: 5px;
   border-radius: 4px;
+  position: relative;
+
+  ${(props) =>
+    props.hasUnread &&
+    css`
+      &::after {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        width: 15px;
+        height: 15px;
+        background: #333;
+        content: '';
+        border-radius: 50%;
+      }
+    `}
 `;
 
 export const CardBody = styled.div`
@@ -52,6 +68,7 @@ export const CardBody = styled.div`
   }
 
   p {
+    color: #777;
     margin-top: 10px;
   }
 `;
@@ -113,26 +130,24 @@ export const Close = styled.div`
 `;
 
 export const ButtonContact = styled.button`
-  /* ${(props) => console.log(props.unread)} */
   display: flex;
   border: none;
   background: #ffff;
 
-  :hover {
-    div {
-      display: block;
-      position: absolute;
-      top: calc(50% + 10px);
-      left: calc(45% - 100px);
-      width: 400px;
-      height: 400px;
-      padding: 20px 5px 2px 10px;
-      background-color: #fff;
-      border: 2px solid red;
+  .openMessage {
+    display: ${(props) => (props.open ? 'flex' : 'none')};
+    flex-direction: column;
+    position: absolute;
+    top: calc(50% + 10px);
+    left: calc(45% - 100px);
+    width: 400px;
+    height: 400px;
+    padding: 20px 5px 2px 10px;
+    background-color: #fff;
+    border: 2px solid red;
 
-      p {
-        margin-bottom: 5px;
-      }
+    p {
+      margin-bottom: 5px;
     }
   }
 
@@ -157,10 +172,6 @@ export const ButtonContact = styled.button`
 
       & + td {
         padding-left: 15px;
-      }
-
-      div {
-        display: none;
       }
     }
   }

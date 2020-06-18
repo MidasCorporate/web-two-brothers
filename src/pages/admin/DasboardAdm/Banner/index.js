@@ -85,7 +85,7 @@ function Banner() {
     setDisplayLogo(event.target.value);
   }
   function handleTeste() {
-    history.push('/teste')
+    history.push('/teste');
   }
 
   return (
@@ -96,9 +96,7 @@ function Banner() {
         </CardHeader>
         <CardBody>
           <strong>Baner pincipal</strong>
-          <p>
-            Selecione uma nova imagem para o seu banner principal wedqwedqedqwe
-          </p>
+          <p>Selecione uma nova imagem para o seu banner principal</p>
         </CardBody>
       </CardButton>
 
@@ -198,7 +196,9 @@ function Banner() {
           </DivButton>
         </Form>
       </WindowBannerImg>
-      <button onClick={handleTeste} type="button">Teste Avançado</button>
+      <button onClick={handleTeste} type="button">
+        Teste Avançado
+      </button>
     </>
   );
 }

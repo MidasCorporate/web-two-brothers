@@ -10,7 +10,7 @@ import Header from '~/components/HeaderAdm';
 import BannerFunction from './Banner';
 // import AboutFunction from './About';
 // import EvaluentionFunction from './Evaluention';
-import MenssageFunction from './Menssage';
+import MessageFunction from './Message';
 
 export default function Dashboard() {
   return (
@@ -21,7 +21,7 @@ export default function Dashboard() {
           <BannerFunction />
           {/* <AboutFunction /> */}
           {/* <EvaluentionFunction /> */}
-          <MenssageFunction />
+          <MessageFunction />
         </Grid>
       </Container>
     </>
