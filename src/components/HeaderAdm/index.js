@@ -23,13 +23,13 @@ export default function HeaderAdm() {
     <Container>
       <Content>
         <nav>
-         // <img src={logo} alt="Two Brothers" />
+        <img src={logo} alt="Two Brothers" />
           <Link to="/dashboardadm">DASHBOARD</Link>
         </nav>
         <aside>
           <Profile>
             <div>
-              //<strong>{profile.name}</strong>
+             <strong>teste</strong>
               <button type="button" onClick={handleSignOut}>
                 Sair
               </button>
