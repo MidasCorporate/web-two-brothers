@@ -1,6 +1,6 @@
 /* eslint-disable no-shadow */
 import React, { useState, useEffect } from 'react';
-import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
+// import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
 
 // import { Link } from 'react-router-dom';
 
@@ -29,10 +29,10 @@ import api from '~/services/api';
 // import history from '~/services/history';
 
 function Dashboard() {
-  const position = {
-    lat: -19.3949988,
-    lng: -54.5728501,
-  };
+  // const position = {
+  //   lat: -19.3949988,
+  //   lng: -54.5728501,
+  // };
 
   const [bannerCarrocel, setBannerCarrossel] = useState([]);
   const [teste, setTest] = useState('');
