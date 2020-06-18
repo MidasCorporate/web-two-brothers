@@ -10,10 +10,10 @@ import DashboardAdm from '../pages/admin/DasboardAdm';
 export default function Routes() {
   return (
     <Switch>
-      <Route path="/" exact component={DashboardClient} />
-      <Route path="/adm"  component={SingnIn} />
+      <Route exact path="/" component={DashboardClient} />
+      <Route exact path="/adm" component={SingnIn} />
 
-      <Route path="/dashboardadm"  component={DashboardAdm} isPrivate />
+      <Route exact path="/dashboardadm" component={DashboardAdm} isPrivate />
     </Switch>
   );
 }
