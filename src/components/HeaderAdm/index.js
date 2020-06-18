@@ -7,7 +7,7 @@ import { MdPerson } from 'react-icons/md';
 
 import { signOut } from '~/store/modules/auth/actions';
 
-//import logo from '~/assets/logo.png';
+import logo from '~/assets/logo.png';
 
 import { Container, Profile, Content } from './styles';
 
