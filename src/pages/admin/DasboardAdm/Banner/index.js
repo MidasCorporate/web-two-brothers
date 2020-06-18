@@ -198,7 +198,7 @@ function Banner() {
           </DivButton>
         </Form>
       </WindowBannerImg>
-      <button onAuxClick={handleTeste} type="button">Teste Avançado</button>
+      <button onClick={handleTeste} type="button">Teste Avançado</button>
     </>
   );
 }
