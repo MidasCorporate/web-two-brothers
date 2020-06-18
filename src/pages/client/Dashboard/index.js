@@ -26,20 +26,22 @@ import Header from '~/components/Header';
 import '~/styles/leaflet.css';
 
 import api from '~/services/api';
+// import history from '~/services/history';
 
 function Dashboard() {
   const position = {
     lat: -19.3949988,
     lng: -54.5728501,
   };
+
   const [bannerCarrocel, setBannerCarrossel] = useState([]);
   const [teste, setTest] = useState('');
 
   const [number, setNumber] = useState();
 
   const [tag, setTag] = useState(false);
-  const [opacity, setOpacity] = useState(true);
-  const [displayLogo, setDisplayLogo] = useState(true);
+  const [opacity, setOpacity] = useState('');
+  const [displayLogo, setDisplayLogo] = useState('');
   const [bannerAutomatic, setBannerAutomatic] = useState(true);
 
   useEffect(() => {
@@ -104,17 +106,23 @@ function Dashboard() {
     }
   }
 
+  // function handlePageSingIn() {
+  //   history.push('/adm');
+  // }
+
   return (
     <>
       <Header />
       <Intro id="inicio">
         <Banner opacity={opacity} tag={tag} urlImg={teste}>
+          {/* <Banner> */}
           <div />
         </Banner>
         <IntroBody>
           <Container>
             <Row>
               <Coll display={displayLogo}>
+                {/* <Coll> */}
                 <div>
                   <img src={logo} alt="logo" />
                 </div>
@@ -127,6 +135,7 @@ function Dashboard() {
             </Row>
           </Container>
           <DivBottomBanner>
+            {/* <button type="button"> */}
             <button type="button" onClick={handleClickAdvanceBanner}>
               <MdNavigateNext />
             </button>
