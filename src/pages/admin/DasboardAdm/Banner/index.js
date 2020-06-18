@@ -19,6 +19,7 @@ import BannerInput from './BannerInput';
 import './styles.css';
 
 import api from '~/services/api';
+import history from '~/services/history';
 
 import {
   CardButton,
@@ -82,6 +83,9 @@ function Banner() {
   }
   function handleDisplayLogo(event) {
     setDisplayLogo(event.target.value);
+  }
+  function handleTeste() {
+    history.push('/teste')
   }
 
   return (
@@ -194,6 +198,7 @@ function Banner() {
           </DivButton>
         </Form>
       </WindowBannerImg>
+      <button onAuxClick={handleTeste} type="button">Teste Avançado</button>
     </>
   );
 }

@@ -7,6 +7,7 @@ import SingnIn from '../pages/SignIn';
 
 import DashboardClient from '../pages/client/Dashboard';
 import DashboardAdm from '../pages/admin/DasboardAdm';
+import teste from './teste';
 
 export default function Routes() {
   return (
@@ -16,6 +17,7 @@ export default function Routes() {
       <Route exact path="/adm" component={SingnIn} />
 
       <Route exact path="/dashboardadm" component={DashboardAdm} isPrivate />
+      <Route exact path="/teste" component={teste} />
     </Switch>
     </ BrowserRouter>
 
