@@ -5,6 +5,10 @@ export const Wrapper = styled.div`
   background: #f6f6f6;
   margin-top: 100px;
   padding-bottom: 45px;
+
+  @media (max-width: 425px) {
+    margin-top: 40px;
+  }
 `;
 
 export const Container = styled.div`
@@ -30,14 +34,13 @@ export const Content = styled.div`
 
 export const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, auto));
+  grid-template-columns: repeat(8, minmax(180px, auto));
   grid-gap: 10px;
   justify-content: center;
   align-items: center;
   border-radius: 4px;
-  @media (max-width: 1360px) {
+  @media (max-width: 1440px) {
     grid-template-columns: repeat(auto-fill, minmax(180px, auto));
-    justify-content: center;
   }
 `;
 

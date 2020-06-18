@@ -9,6 +9,12 @@ export const Wrapper = styled.section`
   align-items: center;
   justify-content: center;
   margin-top: 120px;
+
+  @media (max-width: 425px) {
+    height: 650px;
+    padding: 10px 0 13px;
+    margin-top: 20px;
+  }
 `;
 
 export const Information = styled.div`

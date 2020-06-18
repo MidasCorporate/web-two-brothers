@@ -1,18 +1,19 @@
 import styled from 'styled-components';
 
 export const About = styled.div`
+  width: 100%;
   padding: 40px 0 70px 0;
   background: #f6f6f6;
   margin-top: 100px;
+
+  @media (max-width: 425px) {
+    margin-top: 20px;
+    padding: 30px 0 10px 0;
+  }
 `;
 
 export const Container = styled.div`
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-
-  @media (min-width: 768px) {
+  /* @media (min-width: 768px) {
     width: 750px;
   }
   @media (min-width: 992px) {
@@ -20,7 +21,7 @@ export const Container = styled.div`
   }
   @media (min-width: 1200px) {
     width: 1170px;
-  }
+  } */
 `;
 
 export const SectionTitle = styled.div`
@@ -33,51 +34,35 @@ export const SectionTitle = styled.div`
 `;
 
 export const Row = styled.div`
-  margin-right: -15px;
-  margin-left: -15px;
-`;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 
-export const Coll = styled.div`
-  position: relative;
-  min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
-
-  @media (max-width: 640px) {
-    > div {
-      display: block;
-      max-width: 100%;
-      height: auto;
-    }
-  }
-  @media (min-width: 992px) {
-    float: left;
-    width: 33.33333333%;
+  @media (max-width: 1024px) {
+    flex-direction: column;
   }
 `;
 
 export const ImageAbout = styled.img`
-  display: flex;
-  align-items: center;
+  width: 900px;
 
-  max-width: 700px;
-  margin-top: -90px;
-  margin-left: -250px;
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
 `;
 
 export const IntroText = styled.div`
-  margin: 0;
-  padding: 0px;
-  width: 80%;
-  margin-left: 20%;
-  margin-top: -10px;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+
+  @media (max-width: 425px) {
+    width: 250px;
+  }
 `;
 
 export const Description = styled.div`
-  padding: 0px;
-  width: 80%;
-  margin-left: 20%;
-  margin-top: 10px;
   h4 {
     color: #555;
     margin-top: 20px;

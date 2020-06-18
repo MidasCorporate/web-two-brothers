@@ -6,6 +6,10 @@ export const Wrapper = styled.section`
   background: #f6f6f6;
   padding-bottom: 90px;
   margin-top: 120px;
+
+  @media (max-width: 425px) {
+    margin-top: 20px;
+  }
 `;
 
 export const Container = styled.div`
@@ -30,10 +34,14 @@ export const Title = styled.div`
 
 export const Content = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(420px, auto));
+  grid-template-columns: repeat(3, minmax(370px, auto));
   grid-gap: 10px;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 1440px) {
+    grid-template-columns: repeat(auto-fill, minmax(370px, auto));
+  }
 `;
 
 export const Review = styled.div`
@@ -43,6 +51,8 @@ export const Review = styled.div`
   position: relative;
   background-size: cover;
   border-radius: 4px;
+  align-items: center;
+  justify-content: center;
   ::before {
     content: '';
     position: absolute;
@@ -53,9 +63,9 @@ export const Review = styled.div`
     left: 0;
     border-radius: 4px;
   }
-  & + div {
+  /* & + div {
     margin-left: 30px;
-  }
+  } */
   span {
     display: flex;
     height: 100%;

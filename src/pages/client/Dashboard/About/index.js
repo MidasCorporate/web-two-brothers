@@ -21,9 +21,7 @@ function AboutClient() {
           <h2 id="sobre">Sobre Nós</h2>
         </SectionTitle>
         <Row>
-          <Coll>
-            <ImageAbout src={junp} />
-          </Coll>
+          <ImageAbout src={junp} />
           <IntroText>
             <Description>
               <h4>Quem nós somos</h4>
@@ -34,8 +32,6 @@ function AboutClient() {
                 para mais informações.
               </p>
             </Description>
-          </IntroText>
-          <IntroText>
             <Description>
               <h4>O que fazemos</h4>
               <p>
