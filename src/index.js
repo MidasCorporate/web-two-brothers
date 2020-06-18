@@ -1,16 +1,26 @@
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+
+ReactDOM.render(<App />, document.getElementById('root'));
+
+
+//import React from 'react';
+//import ReactDOM from 'react-dom';
+//import App from './App';
 //import { BrowserRouter } from 'react-router-dom';
 
-ReactDOM.render(
- <React.StrictMode>
+//ReactDOM.render(
+// <React.StrictMode>
 
- <App />
+ //<App />
 
- </React.StrictMode>,
-  document.getElementById('root')
-);
+// </React.StrictMode>,
+// document.getElementById('root')
+//);
+
+
 //ReactDOM.render((
 //<BrowserRouter>
 //  <App/>
