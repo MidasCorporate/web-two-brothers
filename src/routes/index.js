@@ -10,13 +10,14 @@ import DashboardAdm from '../pages/admin/DasboardAdm';
 
 export default function Routes() {
   return (
-
+<BrowserRouter>
     <Switch>
       <Route exact path="/" component={DashboardClient} />
       <Route exact path="/adm" component={SingnIn} />
 
       <Route exact path="/dashboardadm" component={DashboardAdm} isPrivate />
     </Switch>
+    </ BrowserRouter>
 
   );
 }
