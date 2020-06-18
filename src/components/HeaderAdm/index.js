@@ -29,7 +29,8 @@ export default function HeaderAdm() {
         <aside>
           <Profile>
             <div>
-             <strong>teste</strong>
+           <strong>{profile.name}</strong>
+             
               <button type="button" onClick={handleSignOut}>
                 Sair
               </button>
