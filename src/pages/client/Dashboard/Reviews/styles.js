@@ -63,9 +63,6 @@ export const Review = styled.div`
     left: 0;
     border-radius: 4px;
   }
-  /* & + div {
-    margin-left: 30px;
-  } */
   span {
     display: flex;
     height: 100%;

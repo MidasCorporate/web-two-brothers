@@ -23,7 +23,6 @@ export const Banner = styled.div`
     background-image: ${(props) =>
       props.urlImg ? `url(${props.urlImg})` : `url(${backgroundImg})`};
     overflow: hidden;
-    /* filter: brightness(20%); */
     filter: ${(props) =>
       props.opacity ? `brightness(${props.opacity}%)` : 'brightness(95%)'};
     background-repeat: no-repeat;
