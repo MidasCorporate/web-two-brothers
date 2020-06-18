@@ -5,20 +5,16 @@ export const Intro = styled.div`
   display: table;
   width: 100%;
   height: 800px;
-
   text-align: center;
   color: #fff;
-
   background-color: #000;
 `;
 
 export const Banner = styled.div`
   position: relative;
   animation-direction: alternate;
-
   div {
     position: absolute;
-
     width: 100%;
     height: 100vh;
     padding: 100px 0;
@@ -31,31 +27,26 @@ export const Banner = styled.div`
     filter: ${(props) =>
       props.opacity ? `brightness(${props.opacity}%)` : 'brightness(95%)'};
     background-repeat: no-repeat;
-
     animation: ${(props) => (props.tag ? 'div' : 'div2')} 4s forwards;
   }
-
   @keyframes div {
     from {
       transform: translate3d(0px, 0px, 0px);
       opacity: 0;
       width: 10px;
     }
-
     to {
       transform: translate3d(0px, 0px, 0px);
       opacity: 1;
       width: 100%;
     }
   }
-
   @keyframes div2 {
     from {
       transform: translate3d(0px, 0px, 0px);
       opacity: 0;
       width: 0;
     }
-
     to {
       transform: translate3d(0px, 0px, 0px);
       opacity: 1;
@@ -77,19 +68,16 @@ export const IntroBody = styled.div`
     font-family: 'Oswald', sans-serif;
     font-style: italic;
   }
-
   span {
     color: #f7eb06;
     text-shadow: 0 0px #f7eb06;
     font-family: 'Oswald', sans-serif;
     font-style: italic;
   }
-
   p {
     font-size: 18px;
     margin-bottom: 45px;
   }
-
   a {
     color: #333;
     font-weight: 800;
@@ -100,7 +88,6 @@ export const IntroBody = styled.div`
     margin: 0 8px;
     font-size: 18px;
     transition: all 0.5s;
-
     :hover,
     :focus {
       color: #f7eb06;
@@ -108,7 +95,6 @@ export const IntroBody = styled.div`
       background-color: #333;
     }
   }
-
   @media (min-width: 768px) {
     font-size: 18px;
     letter-spacing: 1px;
@@ -122,7 +108,6 @@ export const Container = styled.div`
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
-
   @media (min-width: 768px) {
     width: 750px;
   }
@@ -145,28 +130,23 @@ export const Coll = styled.div`
   padding-right: 15px;
   padding-left: 15px;
   margin-left: 8.33333333%;
-
   display: ${(props) => (props.display ? '' : 'none')};
-
   animation: div3 5s forwards;
   @keyframes div3 {
     from {
       transform: translate3d(0px, 0px, 0px);
       opacity: 0;
     }
-
     to {
       transform: translate3d(0px, 0px, 0px);
       opacity: 1;
     }
   }
-
   img {
     height: 220px;
     width: 250px;
     margin-top: 130px;
   }
-
   @media (max-width: 640px) {
     > div {
       display: block;
@@ -214,14 +194,16 @@ export const Footer = styled.footer`
     background: #f6d001;
     padding: 25px 10px;
   }
-
   strong {
     color: #333;
     margin-right: 5px;
-
     a {
-      color: #333;
+      color: #666;
       margin-left: 5px;
+      transition: color 0.5s;
+      :hover {
+        color: #333;
+      }
     }
   }
 `;

@@ -11,7 +11,7 @@ import {
   Description,
 } from './styles';
 
-import junp from '~/assets/r.png';
+import junp from '~/assets/w.png';
 
 function AboutClient() {
   return (

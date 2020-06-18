@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const About = styled.div`
   padding: 40px 0 70px 0;
   background: #f6f6f6;
+  margin-top: 100px;
 `;
 
 export const Container = styled.div`
@@ -56,10 +57,12 @@ export const Coll = styled.div`
 `;
 
 export const ImageAbout = styled.img`
-  display: block;
-  max-width: 100%;
+  display: flex;
+  align-items: center;
+
+  max-width: 700px;
   margin-top: -90px;
-  height: auto;
+  margin-left: -250px;
 `;
 
 export const IntroText = styled.div`

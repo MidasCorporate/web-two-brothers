@@ -8,6 +8,7 @@ export const Wrapper = styled.section`
   padding: 27px 0 32px;
   align-items: center;
   justify-content: center;
+  margin-top: 120px;
 `;
 
 export const Information = styled.div`

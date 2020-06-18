@@ -1,24 +1,10 @@
 import styled from 'styled-components';
-import testimonial from '~/assets/testimonial_bg.jpg';
-import portfolio from '~/assets/portfolio_bg.jpg';
+import portfolio from '~/assets/fundo1.jpg';
 
 export const Wrapper = styled.div`
-  /* background: url(${testimonial}) no-repeat scroll 0 0;
-  background-size: cover;
-  position: relative; */
   background: #f6f6f6;
+  margin-top: 100px;
   padding-bottom: 45px;
-
-  /* ::before {
-    background: #f6f6f6;
-    opacity: 0.8;
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-  } */
 `;
 
 export const Container = styled.div`
@@ -48,7 +34,7 @@ export const Grid = styled.div`
   grid-gap: 10px;
   justify-content: center;
   align-items: center;
-
+  border-radius: 4px;
   @media (max-width: 1360px) {
     grid-template-columns: repeat(auto-fill, minmax(180px, auto));
     justify-content: center;
@@ -64,33 +50,29 @@ export const Service = styled.div`
   background: url(${portfolio}) no-repeat scroll 0 0;
   position: relative;
   background-size: cover;
-  /* background: #f6d001; */
   margin-bottom: 10px;
   border-radius: 4px;
   justify-content: space-around;
   align-items: center;
-
   ::before {
     content: '';
     position: absolute;
-    background: rgba(255, 203, 15, 0.83);
+    background: rgba(255, 203, 15, 0.95);
     width: 100%;
     height: 100%;
+    border-radius: 4px;
   }
-
   img {
     position: relative;
     width: 91px;
     border-radius: 4px;
   }
-
   strong {
     position: relative;
     display: flex;
     font-size: 22px;
     color: #000;
   }
-
   p {
     color: #666;
   }
