@@ -35,7 +35,12 @@ export const Row = styled.div`
 `;
 
 export const ImageAbout = styled.img`
-  width: 900px;
+  width: 35%;
+  margin: 0 50px;
+  border-radius: 6px;
+  display: flex;
+
+  align-items: center;
 
   @media (max-width: 1024px) {
     width: 100%;

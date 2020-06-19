@@ -10,7 +10,7 @@ import {
   Description,
 } from './styles';
 
-import junp from '~/assets/w.png';
+import junp from '~/assets/fachada.jpg';
 
 function AboutClient() {
   return (

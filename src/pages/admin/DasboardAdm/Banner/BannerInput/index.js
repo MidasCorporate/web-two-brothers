@@ -43,6 +43,7 @@ export default function AvatarInput() {
       <label className="btn btn1" htmlFor="avatar">
         <strong>Upload</strong>
         <input
+          className="inpuImg"
           type="file"
           id="avatar"
           accept="image/*"

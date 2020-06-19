@@ -48,7 +48,7 @@ export const Container = styled.div`
     height: 180%;
   }
 
-  input {
+  .inpuImg {
     display: none;
   }
 `;
