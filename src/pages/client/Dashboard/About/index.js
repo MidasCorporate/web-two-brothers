@@ -5,7 +5,6 @@ import {
   Container,
   SectionTitle,
   Row,
-  Coll,
   ImageAbout,
   IntroText,
   Description,
