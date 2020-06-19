@@ -116,6 +116,28 @@ export const WindowMessage = styled.div`
       }
     }
   }
+
+  .openMessage {
+    display: ${(props) => (props.open ? 'flex' : 'none')};
+    flex-direction: column;
+    position: absolute;
+    top: calc(50% + 10px);
+    left: calc(15% - 105px);
+    width: 800px;
+    height: 400px;
+    padding: 20px 5px 2px 10px;
+    background-color: #fff;
+    border: 2px solid red;
+    box-shadow: 0px 2px 15px rgba(51, 51, 51, 0.15);
+    max-width: 900px;
+    /* text-overflow: unset; */
+    /* white-space: nowrap; */
+    overflow: auto;
+
+    p {
+      margin-bottom: 5px;
+    }
+  }
 `;
 
 export const Close = styled.div`
@@ -133,23 +155,6 @@ export const ButtonContact = styled.button`
   display: flex;
   border: none;
   background: #ffff;
-
-  .openMessage {
-    display: ${(props) => (props.open ? 'flex' : 'none')};
-    flex-direction: column;
-    position: absolute;
-    top: calc(50% + 10px);
-    left: calc(45% - 100px);
-    width: 400px;
-    height: 400px;
-    padding: 20px 5px 2px 10px;
-    background-color: #fff;
-    border: 2px solid red;
-
-    p {
-      margin-bottom: 5px;
-    }
-  }
 
   tr {
     padding: 5px 0;

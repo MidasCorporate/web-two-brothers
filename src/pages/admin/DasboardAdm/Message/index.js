@@ -38,6 +38,8 @@ function Post() {
   async function handleMarkAsRead(_id) {
     await api.put(`contacts/${_id}`);
 
+    console.log(_id);
+
     setContacts(
       contacts.map((contact) =>
         contact._id === _id ? { ...contact, read: true } : contact
@@ -64,7 +66,7 @@ function Post() {
           <p>Aqui estão todas as mensagens de seus clientes</p>
         </CardBody>
       </CardButton>
-      <WindowMessage tag={tagWindow}>
+      <WindowMessage open={open} tag={tagWindow}>
         <Close>
           <MdCancel color="red" size={20} onClick={() => handleWindow([])} />
         </Close>
@@ -73,20 +75,21 @@ function Post() {
           <table cellSpacing={0}>
             <tbody>
               {contacts.map((contact) => (
-                <ButtonContact
-                  key={contact._id}
-                  unread={contact.read}
-                  open={open}
-                  type="button"
-                  onClick={() => handleMarkAsRead(contact._id)}
-                >
-                  <tr>
-                    <td>{contact.name}</td>
-                    <td>{contact.email}</td>
-                    <td>{contact.cel}</td>
-                    <td>{contact.tel}</td>
-                    <td>{contact.message}</td>
-                  </tr>
+                <>
+                  <ButtonContact
+                    key={contact._id}
+                    unread={contact.read}
+                    type="button"
+                    onClick={() => handleMarkAsRead(contact._id)}
+                  >
+                    <tr>
+                      <td>{contact.name}</td>
+                      <td>{contact.email}</td>
+                      <td>{contact.cel}</td>
+                      <td>{contact.tel}</td>
+                      <td>{contact.message}</td>
+                    </tr>
+                  </ButtonContact>
                   <div className="openMessage">
                     <Close open={open}>
                       <MdCancel
@@ -101,7 +104,7 @@ function Post() {
                     <p>{contact.tel}</p>
                     <span>{contact.message}</span>
                   </div>
-                </ButtonContact>
+                </>
               ))}
             </tbody>
           </table>
