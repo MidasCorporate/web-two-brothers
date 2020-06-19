@@ -29,7 +29,6 @@ export const CardButton = styled.button`
   padding: 20px;
   transition: background 0.5s;
   border: none;
-  /* transition: border-bottom 0.5s ease-out; */
 
   span {
     > div {

@@ -1,6 +1,6 @@
 /* eslint-disable no-shadow */
 import React, { useState, useEffect } from 'react';
-// import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
+import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
 
 // import { Link } from 'react-router-dom';
 
@@ -29,10 +29,10 @@ import api from '~/services/api';
 // import history from '~/services/history';
 
 function Dashboard() {
-  // const position = {
-  //   lat: -19.3949988,
-  //   lng: -54.5728501,
-  // };
+  const position = {
+    lat: -19.3949988,
+    lng: -54.5728501,
+  };
 
   const [bannerCarrocel, setBannerCarrossel] = useState([]);
   const [teste, setTest] = useState('');
@@ -146,18 +146,18 @@ function Dashboard() {
       <Service />
       <Reviews />
       <Contact />
-     {/* <Map scrollWheelZoom={false} center={position} zoom={15}>
-       <TileLayer
-    attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-    />
-    <Marker position={position}>
-      <Popup>
-        <strong>Two Brothers</strong> <br /> o melhor tratamento para seu
-        veiculo.
-      </Popup>
+      <Map scrollWheelZoom={false} center={position} zoom={15}>
+        <TileLayer
+          attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        <Marker position={position}>
+          <Popup>
+            <strong>Two Brothers</strong> <br /> o melhor tratamento para seu
+            veiculo.
+          </Popup>
         </Marker>
-      </Map> */}
+      </Map>
       <Footer>
         <span>
           <div>
