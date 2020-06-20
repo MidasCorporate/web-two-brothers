@@ -4,7 +4,12 @@ import backgroundImg from '~/assets/23.jpg';
 export const Intro = styled.div`
   display: table;
   width: 100%;
-  height: 800px;
+  height: 100vh;
+  /* padding: 100px 0; */
+  background-position: 30% 45%;
+  background-size: cover;
+  /* width: 100%;
+  height: 800px; */
   text-align: center;
   color: #fff;
   background-color: #000;
