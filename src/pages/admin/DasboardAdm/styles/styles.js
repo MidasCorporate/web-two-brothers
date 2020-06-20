@@ -142,7 +142,7 @@ export const WindowBannerImg = styled.div`
   flex-direction: column;
   position: absolute;
   width: 50%;
-  max-height: 600px;
+  max-height: 900px;
   animation: slide-mensagem 1s;
 
   textarea {
