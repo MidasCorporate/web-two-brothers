@@ -23,7 +23,7 @@ function Reviews() {
               <div>
                 <p>
                   Top meu amigo sgo precisa de bons profissionais sucesso aí
-                  vale a pena conferir os trabalhos de vcs abraço.👏👏
+                  vale a pena conferir os trabalhos de vcs abraço.
                 </p>
               </div>
               <strong>Paulo Tapparo </strong>
