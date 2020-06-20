@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Form, Input, Textarea } from '@rocketseat/unform';
 import { toast } from 'react-toastify';
 import { FaWhatsapp } from 'react-icons/fa';
@@ -20,14 +20,26 @@ const schema = Yup.object().shape({
 });
 
 function Contact() {
-  async function handleSubmit({ name, email, cel, tel, message }) {
+  const [nameValue, setNameValue] = useState('');
+  const [emailValue, setEmailValue] = useState('');
+  const [celValue, setCelValue] = useState('');
+  const [telValue, setTelValue] = useState('');
+  const [messageValue, setMessageValue] = useState('');
+
+  async function handleSubmit() {
     await api.post('contacts', {
-      name,
-      email,
-      cel,
-      tel,
-      message,
+      name: nameValue,
+      email: emailValue,
+      cel: celValue,
+      tel: telValue,
+      message: messageValue,
     });
+
+    setNameValue('');
+    setEmailValue('');
+    setCelValue('');
+    setTelValue('');
+    setMessageValue('');
 
     toast.success('Messagem enviado com sucesso');
   }
@@ -57,17 +69,43 @@ function Contact() {
         </div>
         <Form onSubmit={handleSubmit} schema={schema}>
           <div>
-            <Input id="inputName" name="name" placeholder="Nome" />
+            <Input
+              name="name"
+              placeholder="Nome"
+              value={nameValue}
+              onChange={(e) => setNameValue(e.target.value)}
+            />
           </div>
           <div>
-            <Input name="email" type="email" placeholder="E-mail" />
+            <Input
+              name="email"
+              type="email"
+              placeholder="E-mail"
+              value={emailValue}
+              onChange={(e) => setEmailValue(e.target.value)}
+            />
           </div>
           <div className="contact">
-            <Input name="cel" placeholder="Celular" />
-            <Input name="tel" placeholder="Telefone" />
+            <Input
+              name="cel"
+              value={celValue}
+              placeholder="Celular"
+              onChange={(e) => setCelValue(e.target.value)}
+            />
+            <Input
+              name="tel"
+              value={telValue}
+              placeholder="Telefone"
+              onChange={(e) => setTelValue(e.target.value)}
+            />
           </div>
           <div>
-            <Textarea name="message" placeholder="Messagem" />
+            <Textarea
+              name="message"
+              value={messageValue}
+              placeholder="Messagem"
+              onChange={(e) => setMessageValue(e.target.value)}
+            />
           </div>
           <button type="submit">Enviar</button>
         </Form>
