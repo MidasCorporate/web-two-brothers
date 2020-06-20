@@ -98,7 +98,7 @@ function Dashboard() {
       }
     }
     loadBanerLoop();
-  }, [number, tag, bannerAutomatic, bannerCarrocel]);
+  }, [number, tag, bannerAutomatic, bannerCarrocel, urlSale]);
 
   function handleClickAdvanceBanner() {
     setBannerAutomatic(false);
