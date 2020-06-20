@@ -52,7 +52,7 @@ export function* updateUrlSale({ payload }) {
     const { id, urlSale } = payload;
     console.tron.log(payload);
 
-    yield call(api.put, 'files', {
+    yield call(api.put, '/files', {
       id,
       urlSale,
     });
