@@ -15,10 +15,10 @@ function Gallery() {
 
   const sliderArr = [
     <ImgComp src={twobrothers} />,
+    <ImgComp src={twobrobuy} />,
     <ImgComp src={carro1} />,
     <ImgComp src={carro2} />,
     <ImgComp src={moto} />,
-    <ImgComp src={twobrobuy} />,
   ];
 
   function goLeft() {
@@ -50,10 +50,10 @@ function Gallery() {
         })}
 
         <button id="goLeft" type="button" onClick={goLeft}>
-          <MdChevronLeft size={60} color="#fff" />
+          <MdChevronLeft size={60} />
         </button>
         <button id="goRight" type="button" onClick={goRight}>
-          <MdChevronRight size={60} color="#fff" />
+          <MdChevronRight size={60} />
         </button>
       </Content>
     </Container>
