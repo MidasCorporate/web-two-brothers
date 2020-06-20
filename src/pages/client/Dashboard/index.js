@@ -44,7 +44,7 @@ function Dashboard() {
 
   const [tag, setTag] = useState(false);
   const [opacity, setOpacity] = useState('');
-  const [displayLogo, setDisplayLogo] = useState('');
+  const [displayLogo, setDisplayLogo] = useState(true);
   const [bannerAutomatic, setBannerAutomatic] = useState(true);
 
   useEffect(() => {

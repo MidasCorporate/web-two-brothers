@@ -211,8 +211,8 @@ function Banner() {
               onChange={handleOpacity}
             />
             <select onChange={handleDisplayLogo}>
-              <option value="">Display logo</option>
-              <option value={false}>Disabiltado</option>
+              <option value>logo habilitado</option>
+              <option value={false}>logo desabiltado</option>
             </select>
 
             <input
