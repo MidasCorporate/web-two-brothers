@@ -32,6 +32,13 @@ export const Banner = styled.div`
       props.opacity ? `brightness(${props.opacity}%)` : 'brightness(95%)'};
     background-repeat: no-repeat;
     animation: ${(props) => (props.tag ? 'div' : 'div2')} 10s forwards;
+
+    @media (max-width: 600px) {
+      padding: 0;
+
+      background-position: 100% 30%;
+      background-size: 100%;
+    }
   }
   @keyframes div {
     from {
