@@ -18,9 +18,10 @@ import {
 } from './styles';
 import logo from '~/assets/logo.png';
 import Service from './Services';
-import AboutClient from '~/pages/client/Dashboard/About';
-import Reviews from '~/pages/client/Dashboard/Reviews';
-import Contact from '~/pages/client/Dashboard/Contact';
+import AboutClient from './About';
+import Reviews from './Reviews';
+import Contact from './Contact';
+import Gallery from './gallery';
 import Header from '~/components/Header';
 
 import '~/styles/leaflet.css';
@@ -153,6 +154,7 @@ function Dashboard() {
       </Intro>
       <AboutClient />
       <Service />
+      <Gallery />
       <Reviews />
       <Contact />
       <Map scrollWheelZoom={false} center={position} zoom={15}>

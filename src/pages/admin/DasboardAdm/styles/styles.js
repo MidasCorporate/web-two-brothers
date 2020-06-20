@@ -13,7 +13,6 @@ export const Container = styled.div`
 
 export const Grid = styled.div`
   display: grid;
-  /* grid-template-columns: repeat(8, 1fr); */
   grid-template-columns: repeat(auto-fill, minmax(12, 2fr));
   grid-gap: 20px;
 `;
@@ -57,7 +56,6 @@ export const CardHeader = styled.header`
   margin-top: -90px;
   margin-left: -10px;
   background: red;
-  /* position: absolute; */
   padding: 5px;
   border-radius: 4px;
 `;
@@ -71,35 +69,27 @@ export const CardBody = styled.div`
   }
 
   p {
+    color: #777;
     margin-top: 10px;
   }
 `;
 
 export const WindowMessage = styled.div`
-  /* display: none; */
   background-color: #fff;
   border: 2px solid red;
   color: #999;
   padding: 50px 25px 100px 25px;
   border-radius: 4px;
-  /* margin-top: 40px; */
   margin-left: 45px;
   z-index: 1;
   display: ${(props) => (props.tag ? 'flex' : 'none')};
   align-items: center;
   text-align: center;
   flex-direction: column;
-  /* opacity: 0.9; */
   position: absolute;
   width: 50%;
   max-height: 600px;
-  /* overflow: auto; */
   animation: slide-mensagem 1s;
-
-  /* @media all and (max-height: 768px) {
-    #divContent{
-     overflow:auto;
-    } */
 
   @keyframes slide-mensagem {
     from {
@@ -129,7 +119,6 @@ export const WindowMessage = styled.div`
 
 export const Close = styled.div`
   position: absolute;
-  /* margin-top: -25px; */
   top: 0;
   left: 0;
 
@@ -140,49 +129,30 @@ export const Close = styled.div`
 `;
 
 export const WindowBannerImg = styled.div`
-  /* display: none; */
   background-color: #fff;
   border: 2px solid red;
   color: #999;
-  padding: 50px 25px 100px 25px;
+  padding: 30px 25px 100px 25px;
   border-radius: 4px;
-  /* margin-top: 40px; */
   margin-left: 45px;
   z-index: 1;
   display: ${(props) => (props.tag ? 'flex' : 'none')};
   align-items: center;
   text-align: center;
   flex-direction: column;
-  /* opacity: 0.9; */
   position: absolute;
   width: 50%;
   max-height: 600px;
-  /* overflow: auto; */
   animation: slide-mensagem 1s;
-
-  /* @media all and (max-height: 768px) {
-    #divContent{
-     overflow:auto;
-    } */
-
-  /* @keyframes slide-mensagem {
-    from {
-      transform: translate3d(0px, -100px, 0px);
-      opacity: 0;
-    }
-
-    to {
-      transform: translate3d(0px, 0px, 0px);
-      opacity: 1;
-    }
-  } */
 
   textarea {
     margin-top: 80px;
   }
 
-  h2 {
-    height: 40px;
+  h3 {
+    color: #ef4336;
+    padding-bottom: 20px;
+    margin: 0;
   }
 
   img {
@@ -256,7 +226,6 @@ export const DivButton = styled.div`
     margin: 10px;
     margin-top: 25px;
     transition: 0.8s;
-    /* flex-direction: row */
     overflow: hidden;
     position: relative;
   }
@@ -267,7 +236,6 @@ export const DivButton = styled.div`
   .btn1:hover {
     strong {
       color: #fff;
-      /* z-index: 1; */
       position: relative;
     }
   }
@@ -278,7 +246,6 @@ export const DivButton = styled.div`
   .btn2:hover {
     strong {
       color: #fff;
-      /* z-index: 1; */
       position: relative;
     }
   }
@@ -289,7 +256,6 @@ export const DivButton = styled.div`
     width: 100%;
     height: 0%;
     background: red;
-    /* z-index: 1; */
     transition: 0.8s;
     top: 0;
     border-radius: 0 0 50% 50%;
