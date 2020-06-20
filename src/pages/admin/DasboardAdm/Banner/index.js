@@ -12,7 +12,11 @@ import {
   MdReply,
 } from 'react-icons/md';
 
-import { updateBanner } from '~/store/modules/file/actions';
+import {
+  createNewBanner,
+  updateUrlBanner,
+  updateBanner,
+} from '~/store/modules/file/actions';
 
 import BannerInput from './BannerInput';
 
@@ -27,24 +31,36 @@ import {
   WindowBannerImg,
   DivButton,
   Close,
+  ContainterOptions,
 } from '../styles/styles';
 
 function Banner() {
   const dispatch = useDispatch();
+
   const { url } = useSelector((state) => state.file);
   const [files, setItem] = useState([]);
+  const [selectUrlSale, satSelectUrlSale] = useState([]);
+  const [urlSale, setUrlSale] = useState('');
 
   const [tagWindow, setTagWindow] = useState(false);
+
   const [selectedItems, setSelectedItems] = useState([]);
   const [selectedImage, setSelectedImage] = useState([]);
+
   const [opacity, setOpacity] = useState(0);
-  const [displayLogo, setDisplayLogo] = useState(true);
+  const [displayLogo, setDisplayLogo] = useState(false);
 
   useEffect(() => {
     api.get('files').then((response) => {
       setItem(response.data);
     });
   }, [url]);
+
+  useEffect(() => {
+    api.get('/files/imgBanner').then((response) => {
+      satSelectUrlSale(response.data);
+    });
+  }, [tagWindow]);
 
   // function handleInputChange(event) {
   //   const { name, value } = event.target;
@@ -57,8 +73,18 @@ function Banner() {
   }
 
   function handleSave() {
-    dispatch(updateBanner(selectedItems, opacity, displayLogo));
-    setTagWindow(!tagWindow);
+    if (selectUrlSale.length === 0) {
+      dispatch(createNewBanner(selectedItems, opacity, displayLogo));
+      setTagWindow(!tagWindow);
+    } else {
+      dispatch(updateBanner(selectedItems, opacity, displayLogo));
+      setTagWindow(!tagWindow);
+    }
+  }
+
+  async function handleSetUrlBanner() {
+    const id = selectedItems[0];
+    dispatch(updateUrlBanner(id, urlSale));
   }
 
   function handleSelectItem(id) {
@@ -82,6 +108,9 @@ function Banner() {
   }
   function handleDisplayLogo(event) {
     setDisplayLogo(event.target.value);
+  }
+  function handleUrlSale(event) {
+    setUrlSale(event.target.value);
   }
 
   return (
@@ -174,26 +203,40 @@ function Banner() {
               ))}
             </ul>
           </fieldset>
+          <ContainterOptions>
+            <input
+              type="number"
+              placeholder="Opacidade"
+              name="opacity"
+              onChange={handleOpacity}
+            />
+            <select onChange={handleDisplayLogo}>
+              <option value="">Display logo</option>
+              <option value={false}>Disabiltado</option>
+            </select>
 
-          <input
-            type="number"
-            placeholder="Opacidade"
-            name="opacity"
-            onChange={handleOpacity}
-          />
-
-          <select onChange={handleDisplayLogo}>
-            <option value="">Display logo</option>
-            <option value={false}>Disabiltado</option>
-          </select>
-          <DivButton>
-            <BannerInput />
-            <button onClick={handleSave} className="btn btn1" type="button">
-              <strong>Salvar</strong>
-            </button>
-            {/* <button type="button">Cancelar</button> */}
-          </DivButton>
+            <input
+              type="text"
+              placeholder="URL"
+              name="urlsale"
+              onChange={handleUrlSale}
+            />
+          </ContainterOptions>
         </Form>
+        <DivButton>
+          <BannerInput />
+          <button
+            type="button"
+            className="btn btn2"
+            onClick={handleSetUrlBanner}
+          >
+            <strong>Set Url</strong>
+          </button>
+          <button onClick={handleSave} className="btn btn1" type="button">
+            <strong>Salvar</strong>
+          </button>
+          {/* <button type="button">Cancelar</button> */}
+        </DivButton>
       </WindowBannerImg>
     </>
   );

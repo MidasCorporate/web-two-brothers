@@ -27,11 +27,45 @@ export function* createBanner({ payload }) {
 
     toast.success('Albun gerado com sucesso');
   } catch (err) {
-    toast.error('Falha na autenticação, verifique seus dados');
+    toast.error('Falha ao carregar banner');
+  }
+}
+
+export function* updateBanner({ payload }) {
+  try {
+    const { id, opacity, displayLogo } = payload;
+
+    yield call(api.put, 'files/imgBanner', {
+      id,
+      opacity,
+      displayLogo,
+    });
+
+    toast.success('Albun atualizado com sucesso');
+  } catch (err) {
+    toast.error('Falha ao carregar banner');
+  }
+}
+
+export function* updateUrlSale({ payload }) {
+  try {
+    const { id, urlSale } = payload;
+    console.tron.log(payload);
+
+    yield call(api.put, 'files', {
+      id,
+      urlSale,
+    });
+
+    toast.success('Url atualizada com sucesso');
+  } catch (err) {
+    toast.error('Falha ao atualizar a Url');
   }
 }
 
 export default all([
   takeLatest('@file/UPLOAD_IN_REQUEST', upload),
   takeLatest('@file/SAVE_IN_REQUEST', createBanner),
+  takeLatest('@file/NEW-UPDATE_IN_REQUEST', updateBanner),
+  takeLatest('@file/UPDATE_IN_REQUEST', updateUrlSale),
 ]);

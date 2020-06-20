@@ -12,9 +12,22 @@ export function uploadSucess(url) {
   };
 }
 
-export function updateBanner(id, opacity, displayLogo) {
+export function createNewBanner(id, opacity, displayLogo) {
   return {
     type: '@file/SAVE_IN_REQUEST',
     payload: { id, opacity, displayLogo },
+  };
+}
+export function updateBanner(id, opacity, displayLogo) {
+  return {
+    type: '@file/NEW-UPDATE_IN_REQUEST',
+    payload: { id, opacity, displayLogo },
+  };
+}
+
+export function updateUrlBanner(id, urlSale) {
+  return {
+    type: '@file/UPDATE_IN_REQUEST',
+    payload: { id, urlSale },
   };
 }

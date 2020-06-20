@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   text-align: center;
-  margin-left: 100px;
+  margin-left: 285px;
 
   .btn {
     border: 1px solid red;
@@ -13,6 +13,7 @@ export const Container = styled.div`
     cursor: pointer;
     margin: 10px;
     transition: 0.8s;
+    margin-top: 25px;
 
     overflow: hidden;
     position: absolute;

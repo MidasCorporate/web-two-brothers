@@ -26,7 +26,7 @@ export const Banner = styled.div`
     filter: ${(props) =>
       props.opacity ? `brightness(${props.opacity}%)` : 'brightness(95%)'};
     background-repeat: no-repeat;
-    animation: ${(props) => (props.tag ? 'div' : 'div2')} 4s forwards;
+    animation: ${(props) => (props.tag ? 'div' : 'div2')} 10s forwards;
   }
   @keyframes div {
     from {

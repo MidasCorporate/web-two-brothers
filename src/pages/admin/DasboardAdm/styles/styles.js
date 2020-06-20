@@ -219,10 +219,11 @@ export const WindowBannerImg = styled.div`
     border-radius: 4px;
     max-height: 400px;
     overflow: auto;
+    margin-bottom: 20px;
     /* position: relative; */
   }
 
-  form {
+  /* form {
     input {
       margin-top: 10px;
       display: flex;
@@ -238,12 +239,12 @@ export const WindowBannerImg = styled.div`
       text-align: center;
       color: #999;
     }
-  }
+  } */
 `;
 
 export const DivButton = styled.div`
   text-align: center;
-  margin-left: -100px;
+  margin-left: -150px;
 
   .btn {
     border: 1px solid red;
@@ -253,6 +254,7 @@ export const DivButton = styled.div`
     font-size: 20px;
     cursor: pointer;
     margin: 10px;
+    margin-top: 25px;
     transition: 0.8s;
     /* flex-direction: row */
     overflow: hidden;
@@ -261,6 +263,7 @@ export const DivButton = styled.div`
   .btn1 {
     color: red;
   }
+
   .btn1:hover {
     strong {
       color: #fff;
@@ -268,6 +271,7 @@ export const DivButton = styled.div`
       position: relative;
     }
   }
+
   .btn2 {
     color: red;
   }
@@ -306,7 +310,29 @@ export const DivButton = styled.div`
   }
 `;
 
-// export const Option = styled.div`
-//   z-index: 1;
-//   background: red;
-// `;
+export const ContainterOptions = styled.span`
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  margin: auto;
+  width: 500px;
+
+  input {
+    /* background: rgba(0, 0, 0, 0.1); */
+    border: solid 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    height: 44px;
+    padding: 0 15px;
+    color: #333;
+    margin: 0 0 10px;
+  }
+  select {
+    /* background: rgba(0, 0, 0, 0.1); */
+    border: solid 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    height: 44px;
+    padding: 0 15px;
+    color: #333;
+    margin: 0 0 10px;
+  }
+`;

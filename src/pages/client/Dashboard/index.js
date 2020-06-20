@@ -35,7 +35,9 @@ function Dashboard() {
   };
 
   const [bannerCarrocel, setBannerCarrossel] = useState([]);
+  const [urlSale, setUrlSale] = useState([]);
   const [teste, setTest] = useState('');
+  const [urlSaleCarrocel, setUrlSaleCarrocel] = useState('');
 
   const [number, setNumber] = useState();
 
@@ -47,17 +49,20 @@ function Dashboard() {
   useEffect(() => {
     async function loadBanner() {
       const response = await api.get('files/imgBanner');
+
       const { data } = response;
 
       if (data.length > 0) {
         const { file, opacity, displayLogo } = data[0];
 
         const arrayImg = file.map((item) => item.url);
+        const arrayUrlSale = file.map((item) => item.urlSale);
 
         setOpacity(opacity);
 
         setDisplayLogo(displayLogo);
         setBannerCarrossel(arrayImg);
+        setUrlSale(arrayUrlSale);
       }
       setNumber(true);
     }
@@ -69,6 +74,7 @@ function Dashboard() {
       if (bannerAutomatic) {
         if (bannerCarrocel.length === 1) {
           setTest(bannerCarrocel[0]);
+          setUrlSaleCarrocel(urlSale[0]);
           return;
         }
         setTimeout(() => {
@@ -76,6 +82,7 @@ function Dashboard() {
             setNumber(number + 1);
 
             setTest(bannerCarrocel[number]);
+            setUrlSaleCarrocel(urlSale[number]);
 
             setTag(!tag);
           }
@@ -116,7 +123,9 @@ function Dashboard() {
       <Intro id="inicio">
         <Banner opacity={opacity} tag={tag} urlImg={teste}>
           {/* <Banner> */}
-          <div />
+          <a href={urlSaleCarrocel} title="Click para saber mais informações">
+            <div />
+          </a>
         </Banner>
         <IntroBody>
           <Container>
