@@ -19,7 +19,7 @@ export function* createBanner({ payload }) {
   try {
     const { id, opacity, displayLogo } = payload;
 
-    yield call(api.post, 'files/imgBanner', {
+    yield call(api.post, '/files/imgBanner', {
       id,
       opacity,
       displayLogo,
@@ -35,7 +35,7 @@ export function* updateBanner({ payload }) {
   try {
     const { id, opacity, displayLogo } = payload;
 
-    yield call(api.put, 'files/imgBanner', {
+    yield call(api.put, '/files/imgBanner', {
       id,
       opacity,
       displayLogo,
