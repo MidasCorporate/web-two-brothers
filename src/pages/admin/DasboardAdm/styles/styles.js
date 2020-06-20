@@ -135,6 +135,7 @@ export const WindowBannerImg = styled.div`
   padding: 30px 25px 100px 25px;
   border-radius: 4px;
   margin-left: 45px;
+  margin-bottom: 30px;
   z-index: 1;
   display: ${(props) => (props.tag ? 'flex' : 'none')};
   align-items: center;
@@ -142,7 +143,7 @@ export const WindowBannerImg = styled.div`
   flex-direction: column;
   position: absolute;
   width: 50%;
-  max-height: 900px;
+  max-height: 750px;
   animation: slide-mensagem 1s;
 
   textarea {
