@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import backgroundImg from '~/assets/23.jpg';
+import backgroundImg from '~/assets/10125.jpg';
 
 export const Intro = styled.div`
   display: table;
