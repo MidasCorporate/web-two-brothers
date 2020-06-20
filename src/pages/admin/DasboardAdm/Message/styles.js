@@ -77,17 +77,17 @@ export const WindowMessage = styled.div`
   background-color: #fff;
   border: 2px solid red;
   color: #999;
-  padding: 25px 5px 10px 10px;
+  top: 100px;
+  left: 200px;
   border-radius: 4px;
-  margin-left: 45px;
   z-index: 1;
   display: ${(props) => (props.tag ? 'flex' : 'none')};
   align-items: center;
-  text-align: center;
   flex-direction: column;
   position: absolute;
-  width: 50%;
+  width: 75%;
   max-height: 600px;
+  overflow: auto;
   animation: slide-mensagem 1s;
 
   @keyframes slide-mensagem {
@@ -102,41 +102,8 @@ export const WindowMessage = styled.div`
     }
   }
 
-  fieldset {
-    width: 100%;
-    overflow: auto;
-    padding: 10px 0;
-
-    table {
-      width: 100%;
-
-      tbody {
-        display: flex;
-        flex-direction: column;
-      }
-    }
-  }
-
-  .openMessage {
-    display: ${(props) => (props.open ? 'flex' : 'none')};
-    flex-direction: column;
-    position: absolute;
-    top: calc(50% + 10px);
-    left: calc(15% - 105px);
-    width: 800px;
-    height: 400px;
-    padding: 20px 5px 2px 10px;
-    background-color: #fff;
-    border: 2px solid red;
-    box-shadow: 0px 2px 15px rgba(51, 51, 51, 0.15);
-    max-width: 900px;
-    /* text-overflow: unset; */
-    /* white-space: nowrap; */
-    overflow: auto;
-
-    p {
-      margin-bottom: 5px;
-    }
+  h3 {
+    color: #ef4336;
   }
 `;
 
@@ -151,33 +118,30 @@ export const Close = styled.div`
   }
 `;
 
-export const ButtonContact = styled.button`
-  display: flex;
-  border: none;
-  background: #ffff;
+export const Contacts = styled.table`
+  width: 100%;
 
-  tr {
-    padding: 5px 0;
-    background: #ffff;
-    border-radius: 4px;
-    padding-left: 5px;
+  thead th {
+    text-align: center;
+    color: #333;
+    height: 50px;
+    border-bottom: 1px solid #ef4336;
+  }
+`;
 
-    & + tr {
-      margin: 10px 0;
-    }
-
-    td {
-      max-width: 200px;
-      margin-left: 15px;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      overflow: hidden;
-      color: ${(props) => (props.unread ? '#999' : '#333')};
-      font-weight: ${(props) => (props.unread ? '400' : 'bold')};
-
-      & + td {
-        padding-left: 15px;
-      }
-    }
+export const Tr = styled.tr`
+  td {
+    width: 50px;
+    text-align: center;
+    background: #fff;
+    color: #666;
+    height: 44px;
+    border-bottom: 1px solid #eee;
+    max-width: 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: ${(props) => (props.unread ? '#999' : '#333')};
+    font-weight: ${(props) => (props.unread ? '400' : 'bold')};
   }
 `;
