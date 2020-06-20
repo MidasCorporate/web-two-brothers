@@ -13,34 +13,31 @@ function Reviews() {
           <Review>
             <span>
               <div>
-                <p>
-                  Excelente serviço meu porshe ficou zero, recomendo para todos,
-                  sucesso twobrothers
-                </p>
+                <p>É nois trabalho de qualidade parabens super recomendado</p>
               </div>
-              <strong>Alessandro Silva</strong>
-              {/* <p>1h atrás</p> */}
-            </span>
-          </Review>
-          <Review>
-            <span>
-              <div>
-                <p>Excelente serviço meu porshe ficou zero</p>
-              </div>
-              <strong>Alessandro Silva</strong>
-              {/* <p>1h atrás</p> */}
+              <strong>Roberson Martini </strong>
             </span>
           </Review>
           <Review>
             <span>
               <div>
                 <p>
-                  Excelente serviço meu porshe ficou zero, recomendo para todos,
-                  sucesso twobrothers
+                  Top meu amigo sgo precisa de bons profissionais sucesso aí
+                  vale a pena conferir os trabalhos de vcs abraço.👏👏
                 </p>
               </div>
-              <strong>Alessandro Silva</strong>
-              {/* <p>1h atrás</p> */}
+              <strong>Paulo Tapparo </strong>
+            </span>
+          </Review>
+          <Review>
+            <span>
+              <div>
+                <p>
+                  Resultado final que espera. A two Brothers sempre cuidando do
+                  que é seu.
+                </p>
+              </div>
+              <strong>Romell Saymon Leite Rodrigues </strong>
             </span>
           </Review>
         </Content>
