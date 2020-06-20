@@ -50,7 +50,6 @@ export function* updateBanner({ payload }) {
 export function* updateUrlSale({ payload }) {
   try {
     const { id, urlSale } = payload;
-    console.tron.log(payload);
 
     yield call(api.put, '/files/', {
       id,
