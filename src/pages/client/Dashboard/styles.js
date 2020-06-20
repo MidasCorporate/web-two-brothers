@@ -13,11 +13,19 @@ export const Intro = styled.div`
   text-align: center;
   color: #fff;
   background-color: #000;
+
+  @media (max-width: 600px) {
+    padding: 0;
+    height: 40vh;
+    background-position: 10% 10%;
+    background-size: 100%;
+  }
 `;
 
 export const Banner = styled.div`
   position: relative;
   animation-direction: alternate;
+
   div {
     position: absolute;
     width: 100%;
@@ -36,7 +44,7 @@ export const Banner = styled.div`
     @media (max-width: 600px) {
       padding: 0;
 
-      background-position: 100% 30%;
+      background-position: 100% 10%;
       background-size: 100%;
     }
   }
