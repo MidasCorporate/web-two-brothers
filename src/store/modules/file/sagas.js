@@ -25,7 +25,7 @@ export function* createBanner({ payload }) {
       displayLogo,
     });
 
-    toast.success('Albun gerado com sucesso');
+    toast.success('Album gerado com sucesso');
   } catch (err) {
     toast.error('Falha ao carregar banner');
   }
@@ -41,7 +41,7 @@ export function* updateBanner({ payload }) {
       displayLogo,
     });
 
-    toast.success('Albun atualizado com sucesso');
+    toast.success('Album atualizado com sucesso');
   } catch (err) {
     toast.error('Falha ao carregar banner');
   }
