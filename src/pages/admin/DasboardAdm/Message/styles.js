@@ -77,8 +77,8 @@ export const WindowMessage = styled.div`
   background-color: #fff;
   border: 2px solid red;
   color: #999;
-  top: 100px;
-  left: 200px;
+  top: 15%;
+  left: 10%;
   border-radius: 4px;
   z-index: 1;
   display: ${(props) => (props.tag ? 'flex' : 'none')};
@@ -104,6 +104,11 @@ export const WindowMessage = styled.div`
 
   h3 {
     color: #ef4336;
+  }
+
+  @media (max-width: 425px) {
+    width: 100%;
+    left: 0;
   }
 `;
 

@@ -22,7 +22,7 @@ export default function ReadOrder({ isOpen, closeModal, contact }) {
         },
         content: {
           position: 'absolute',
-          top: '50%',
+          top: '37%',
           left: '50%',
           right: 'auto',
           bottom: 'auto',
@@ -30,7 +30,7 @@ export default function ReadOrder({ isOpen, closeModal, contact }) {
           transform: 'translate(-50%, -50%)',
           borderRadius: '4px',
           width: '550px',
-          height: '580px',
+          height: 'auto',
         },
       }}
     >

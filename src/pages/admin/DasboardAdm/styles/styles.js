@@ -9,6 +9,10 @@ export const Container = styled.div`
   @media (max-width: 960px) {
     max-width: 500px;
   }
+
+  @media (max-width: 425px) {
+    max-width: 400px;
+  }
 `;
 
 export const Grid = styled.div`
@@ -74,48 +78,48 @@ export const CardBody = styled.div`
   }
 `;
 
-export const WindowMessage = styled.div`
-  background-color: #fff;
-  border: 2px solid red;
-  color: #999;
-  padding: 50px 25px 100px 25px;
-  border-radius: 4px;
-  margin-left: 45px;
-  z-index: 1;
-  display: ${(props) => (props.tag ? 'flex' : 'none')};
-  align-items: center;
-  text-align: center;
-  flex-direction: column;
-  position: absolute;
-  width: 50%;
-  max-height: 600px;
-  animation: slide-mensagem 1s;
+// export const WindowMessage = styled.div`
+//   background-color: #fff;
+//   border: 2px solid red;
+//   color: #999;
+//   padding: 50px 25px 100px 25px;
+//   border-radius: 4px;
+//   margin-left: 45px;
+//   z-index: 1;
+//   display: ${(props) => (props.tag ? 'flex' : 'none')};
+//   align-items: center;
+//   text-align: center;
+//   flex-direction: column;
+//   position: absolute;
+//   width: 50%;
+//   max-height: 600px;
+//   animation: slide-mensagem 1s;
 
-  @keyframes slide-mensagem {
-    from {
-      transform: translate3d(0px, -100px, 0px);
-      opacity: 0;
-    }
+//   @keyframes slide-mensagem {
+//     from {
+//       transform: translate3d(0px, -100px, 0px);
+//       opacity: 0;
+//     }
 
-    to {
-      transform: translate3d(0px, 0px, 0px);
-      opacity: 1;
-    }
-  }
+//     to {
+//       transform: translate3d(0px, 0px, 0px);
+//       opacity: 1;
+//     }
+//   }
 
-  textarea {
-    margin-top: 80px;
-  }
+//   textarea {
+//     margin-top: 80px;
+//   }
 
-  h2 {
-    height: 40px;
-  }
+//   h2 {
+//     height: 40px;
+//   }
 
-  img {
-    width: 120px;
-    border-radius: 4px;
-  }
-`;
+//   img {
+//     width: 120px;
+//     border-radius: 4px;
+//   }
+// `;
 
 export const Close = styled.div`
   position: absolute;
@@ -211,6 +215,28 @@ export const WindowBannerImg = styled.div`
       color: #999;
     }
   } */
+
+  @media (max-width: 1024px) {
+    width: 80%;
+  }
+
+  @media (max-width: 768px) {
+    width: 80%;
+    margin-left: 0px;
+    top: 15%;
+    right: 10%;
+    max-height: 550px;
+  }
+
+  @media (max-width: 425px) {
+    width: 100%;
+    right: 0;
+    padding: 20px 0 0 0;
+
+    fieldset {
+      max-width: 100%;
+    }
+  }
 `;
 
 export const DivButton = styled.div`
@@ -301,5 +327,9 @@ export const ContainterOptions = styled.span`
     padding: 0 15px;
     color: #333;
     margin: 0 0 10px;
+  }
+
+  @media (max-width: 425px) {
+    width: 250px;
   }
 `;
