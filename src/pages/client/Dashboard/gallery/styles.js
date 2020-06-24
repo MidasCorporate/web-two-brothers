@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  position: relative;
 `;
 
 export const Title = styled.div`
@@ -20,52 +20,47 @@ export const Title = styled.div`
   }
 `;
 
-export const Content = styled.div`
-  display: flex;
-  width: 90%;
-  height: 600px;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
+export const ImgComp = styled.img`
+  width: 100%;
+  height: 100vh;
   border-radius: 4px;
-  background: #333;
 
-  .slide {
-    min-width: 50%;
-    height: auto;
-    /* background-size: cover; */
+  @media (min-width: 2559px) {
+    height: 900px;
+  }
+
+  @media (max-width: 425px) {
+    height: 70vh;
+  }
+`;
+
+export const Content = styled.div`
+  width: 80%;
+  height: 600px;
+
+  .carousel .slide {
+    background: #333;
+
+    .slide {
+      height: 600px;
+    }
   }
 
   button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     width: 5%;
-    height: 78vh;
-    background: none;
-    border: none;
-    outline: none;
-    transition: 0.9s;
-    cursor: pointer;
-
-    :hover {
-      background: rgba(51, 51, 51, 0.5);
-
-      svg {
-        color: #999;
-      }
-    }
-
-    svg {
-      color: #fff;
-    }
   }
 
-  #goLeft {
-    left: 0;
+  @media (min-width: 2559px) {
+    width: 60%;
+    height: 900px;
   }
 
-  #goRight {
-    right: 0;
+  @media (max-width: 425px) {
+    width: 100%;
+    height: 500px;
+
+    button {
+      width: 15%;
+    }
   }
 `;
