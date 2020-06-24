@@ -166,9 +166,12 @@
 
 .items-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  /* grid-template-columns: repeat(autofit, 1fr); */
+  grid-template-columns: repeat(auto-fit, minmax(100px, auto));
+  gap: 10px;
   list-style: none;
+  align-items: center;
+  justify-content: center;
 
 }
 
@@ -186,10 +189,16 @@
 
   text-align: center;
 
-
-
-
 }
+
+@media (max-width: 425px) {
+
+  .items-grid li {
+    width: 180px;
+    max-height: 180px;
+  }
+}
+
 .items-grid span {
   background: #f5f5f5;
   border: 2px solid #f5f5f5;
@@ -244,6 +253,13 @@
   margin-left:-50px;
 
 }
+
+@media (max-width: 425px) {
+  .items-grid  img.select {
+    left: 15%;
+  }
+}
+
 .items-grid svg.closeSelected {
   z-index: 1;
   position: absolute;
