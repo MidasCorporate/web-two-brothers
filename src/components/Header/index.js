@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 
 import { FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import logo from '~/assets/logo.png';
@@ -42,9 +41,9 @@ function Header() {
     <Container headerColor={headerColor}>
       <Content>
         <nav>
-          <Link to="/" className="logo">
+          <a href="#inicio" className="logo">
             <img src={logo} alt="twobrothers" />
-          </Link>
+          </a>
           <div className="menu-section">
             <ul>
               <li>

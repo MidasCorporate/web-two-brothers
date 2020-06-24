@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
-import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
+import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 
-// import ImgComp from './ImgComp';
 import twobrothers from '~/assets/fundo1.jpg';
 import twobrobuy from '~/assets/twobrobuy.jpg';
 import antes0 from '~/assets/antes0.jpg';
@@ -15,8 +13,6 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Container, Title, Content, ImgComp } from './styles';
 
 function Gallery() {
-  // const [x, setX] = useState(0);
-
   const sliderArr = [
     <ImgComp src={twobrothers} />,
     <ImgComp src={twobrobuy} />,
@@ -25,16 +21,6 @@ function Gallery() {
     <ImgComp src={moto} />,
     <ImgComp src={carro1} />,
   ];
-
-  // function goLeft() {
-  //   // eslint-disable-next-line no-unused-expressions
-  //   x === 0 ? setX(-100 * (sliderArr.length - 2)) : setX(x + 200);
-  // }
-
-  // function goRight() {
-  //   // eslint-disable-next-line no-unused-expressions
-  //   x === -100 * (sliderArr.length - 2) ? setX(0) : setX(x - 200);
-  // }
 
   return (
     <Container>
@@ -47,25 +33,6 @@ function Gallery() {
             return <>{slide}</>;
           })}
         </Carousel>
-
-        {/* {sliderArr.map((slide) => {
-          return (
-            <div
-              className="slide"
-              key={slide}
-              style={{ transform: `translateX(${x}%)` }}
-            >
-              {slide}
-            </div>
-          );
-        })}
-
-        <button id="goLeft" type="button" onClick={goLeft}>
-          <MdChevronLeft size={60} />
-        </button>
-        <button id="goRight" type="button" onClick={goRight}>
-          <MdChevronRight size={60} />
-        </button> */}
       </Content>
     </Container>
   );
