@@ -36,7 +36,7 @@ export const ImgComp = styled.img`
 
 export const Content = styled.div`
   width: 80%;
-  height: 600px;
+  height: 700px;
 
   .carousel .slide {
     background: #333;
