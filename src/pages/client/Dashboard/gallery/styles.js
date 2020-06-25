@@ -30,7 +30,7 @@ export const ImgComp = styled.img`
   }
 
   @media (max-width: 425px) {
-    height: 70vh;
+    height: 55vh;
   }
 `;
 
